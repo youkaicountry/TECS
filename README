@@ -1,8 +1,12 @@
 I am doing a self guided study of 'The Elements
 of Computing Systems' (http://www1.idc.ac.il/tecs/)
 
-You basically build an entire computer from logic
+In the course, you build an entire computer from logic
 gates, then create an assembler, high level language
 , and operating system. As I go through the course
 I will be committing the projects to the git 
 repository.
+
+The software to run these files can be obtained
+from the course website, as well as pdf files
+of the textbook chapters.
