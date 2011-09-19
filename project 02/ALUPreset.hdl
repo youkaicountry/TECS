@@ -1,0 +1,15 @@
+/**
+ * ALU Preset gate: 16 bit input, plus zero and negate (1 bit each)
+   if zero, then zero the input.
+   if negate, then negate (not16) that.
+ */
+
+CHIP ALUPreset {
+    IN in[16], zero, negate;
+    OUT out[16];
+
+    PARTS:
+    Mux16(a=in, b[0..15]=false, sel=zero, out=z);
+    Not16(in=z, out=n);
+    Mux16(a=z, b=n, sel=negate, out=out);
+}

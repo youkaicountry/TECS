@@ -1,0 +1,33 @@
+// This file is part of the materials accompanying the book 
+// "The Elements of Computing Systems" by Nisan and Schocken, 
+// MIT Press. Book site: www.idc.ac.il/tecs
+// File name: projects/02/Adder16.hdl
+
+/*
+ * Adds two 16-bit values.
+ * The most-significant carry bit is ignored.
+ */
+
+CHIP Add16 {
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+    HalfAdder(a=a[0], b=b[0], carry=c1, sum=out[0]);
+    FullAdder(a=c1, b=a[1], c=b[1], carry=c2, sum=out[1]);
+    FullAdder(a=c2, b=a[2], c=b[2], carry=c3, sum=out[2]);
+    FullAdder(a=c3, b=a[3], c=b[3], carry=c4, sum=out[3]);
+    FullAdder(a=c4, b=a[4], c=b[4], carry=c5, sum=out[4]);
+    FullAdder(a=c5, b=a[5], c=b[5], carry=c6, sum=out[5]);
+    FullAdder(a=c6, b=a[6], c=b[6], carry=c7, sum=out[6]);
+    FullAdder(a=c7, b=a[7], c=b[7], carry=c8, sum=out[7]);
+    FullAdder(a=c8, b=a[8], c=b[8], carry=c9, sum=out[8]);
+    FullAdder(a=c9, b=a[9], c=b[9], carry=c10, sum=out[9]);
+    FullAdder(a=c10, b=a[10], c=b[10], carry=c11, sum=out[10]);
+    FullAdder(a=c11, b=a[11], c=b[11], carry=c12, sum=out[11]);
+    FullAdder(a=c12, b=a[12], c=b[12], carry=c13, sum=out[12]);
+    FullAdder(a=c13, b=a[13], c=b[13], carry=c14, sum=out[13]);
+    FullAdder(a=c14, b=a[14], c=b[14], carry=c15, sum=out[14]);
+    FullAdder(a=c15, b=a[15], c=b[15], carry=c16, sum=out[15]);
+    //The carry bit c16 could be used to detect overflow (if it's 1)
+}
